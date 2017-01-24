@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v14\\md_stub_progress_indeterminate.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-v14\\md_stub_progress_indeterminate.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v14\\md_stub_progress.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-v14\\md_stub_progress.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\res\\merged\\debug\\layout-v14\\md_stub_progress_indeterminate_horizontal.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\exploded-aar\\com.github.afollestad.material-dialogs\\core\\0.8.5.7\\res\\layout-v14\\md_stub_progress_indeterminate_horizontal.xml"
+    }
+]

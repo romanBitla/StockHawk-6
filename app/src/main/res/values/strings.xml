@@ -1,0 +1,29 @@
+<resources>
+  <string name="app_name">Stock Hawk</string>
+
+  <string name="action_example">Example action</string>
+
+  <string name="action_settings">Settings</string>
+  <string name="action_change_units">Change Units</string>
+  <string name="symbol_search">Symbol Search</string>
+  <string name="content_test">Search for a Stock Symbol</string>
+  <string name="input_hint">FB</string>
+  <string name="input_prefill"></string>
+  <string name="network_toast">Uh-oh! This app requires an internet connection</string>
+  <string name="empty_view">Data Not Available</string>
+  <string name="invalid_input">Given stock symbol does not exist.\nPlease enter a valid one.</string>
+  <string name="add_stock_symbol">Add Stock Symbol</string>
+  <string name="stock_symbol_name">stock name</string>
+  <string name="percentage_change">Percentage Change in Stock is</string>
+  <string name="value_change">change in stock value</string>
+  <string name="stock_symbol">Stock Symbol</string>
+  <string name="bid_price">Bid Price</string>
+  <string name="graph_description">Stock Price Over Time</string>
+  <string name="stock_quotes">Stock Quotes</string>
+  <string name="sample">Hello Check</string>
+  <string name="empty_stock_list_no_network">No Stock Information available. Network is not available to fetch stock data</string>
+  <string name="empty_stock_list">No Stock Information available</string>
+  <string name="pref_stiock_status_key">stoc-status</string>
+  <string name="empty_stock_list_service_down">No Stock Information available. The server is not returning data</string>
+  <string name="empty_stock_list_service_error">No Stock Information available. The server is not returning valid data</string>
+</resources>

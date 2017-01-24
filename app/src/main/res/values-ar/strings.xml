@@ -1,0 +1,19 @@
+<resources>
+  <string name="app_name">الأسهم هوك</string>
+
+  <string name="action_example">العمل سبيل المثال</string>
+
+  <string name="action_settings">إعدادات</string>
+  <string name="action_change_units">وحدات التغيير</string>
+  <string name="symbol_search">رمز البحث</string>
+  <string name="content_test">بحث عن الأوراق المالية رمز</string>
+  <string name="network_toast">بالإنترنت\n اه اوه! هذا التطبيق يتطلب اتصال</string>
+  <string name="empty_view">اتصال الشبكة مطلوب</string>
+  <string name="invalid_input">لا وجود رمز سهم معين. الرجاء إدخال واحد صحيح.</string>
+  <string name="add_stock_symbol">إضافة أسهم رمز</string>
+  <string name="stock_symbol_name">اسم السهم</string>
+  <string name="percentage_change">نسبة التغيير في سوق الأسهم هو</string>
+  <string name="value_change">التغير في القيمة الاسمية للسهم</string>
+  <string name="stock_symbol">الأسهم رمز</string>
+  <string name="bid_price">سعر</string>
+</resources>

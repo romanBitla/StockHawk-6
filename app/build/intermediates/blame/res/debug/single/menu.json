@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\res\\merged\\debug\\menu\\my_stocks.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\src\\main\\res\\menu\\my_stocks.xml"
+    },
+    {
+        "merged": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\build\\intermediates\\res\\merged\\debug\\menu\\global.xml",
+        "source": "C:\\Users\\DELL\\Desktop\\StockHawk-master\\app\\src\\main\\res\\menu\\global.xml"
+    }
+]
