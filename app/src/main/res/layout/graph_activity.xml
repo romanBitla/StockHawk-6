@@ -3,16 +3,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layoutDirection="locale"
-    android:orientation="vertical"
-    >
+    android:orientation="vertical">
+
+    <RadioGroup
+        android:id="@+id/toggle_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/one_week"
+            android:layout_width="0dp"
+            android:textOn="@string/one_week"
+            android:textOff="@string/one_week"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_button_selector"
+            android:layout_weight="1"
+            android:onClick="onToggle"/>
+
+        <ToggleButton
+            android:id="@+id/six_months"
+            android:textOn="@string/six_months"
+            android:textOff="@string/six_months"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/toggle_button_selector"
+            android:onClick="onToggle"/>
+
+        <ToggleButton
+            android:id="@+id/one_year"
+            android:textOn="@string/one_year"
+            android:textOff="@string/one_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/toggle_button_selector"
+            android:layout_weight="1"
+            android:onClick="onToggle"/>
+
+    </RadioGroup>
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="16dp"
+        android:background="@color/white"
         android:text="10"
-        android:textColor="@color/white"
-        android:background="@color/white"/>
+        android:textColor="@color/white" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
     <com.github.mikephil.charting.charts.LineChart
         android:id="@+id/chart"
+        android:layout_margin="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+    </FrameLayout>
 </LinearLayout>

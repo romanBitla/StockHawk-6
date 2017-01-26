@@ -104,7 +104,7 @@ public class StockWidgetIntentService extends RemoteViewsService {
 
                 final int textColor = (isUp)
                         ? R.color.material_green_700
-                        : R.color.material_red_700;
+                        : R.color.accent;
 
                 RemoteViews row = new RemoteViews(mContext.getPackageName(), R.layout.list_item_quote);
 

@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="material_blue_700">#1976D2</color>
-  <color name="material_blue_500">#2196F3</color>
-  <color name="material_red_700">#D50000</color>
-  <color name="material_green_700">#00C853</color>
+  <color name="material_green_700">#00c853</color>
   <color name="white">#FFFFFF</color>
+  <color name="colorPrimaryLight">#455A64</color>
+  <color name="cool_dark">#3B5F8F</color>
+  <color name="accent">#536DFE</color>
+  <color name="primary">#607D8B</color>
+  <color name="primary_dark">#455A64</color>
 </resources>

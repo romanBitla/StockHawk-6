@@ -1,6 +1,8 @@
 package com.sam_chordas.android.stockhawk.rest;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.res.TypedArray;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.Typeface;
@@ -16,6 +18,8 @@ import com.sam_chordas.android.stockhawk.data.QuoteColumns;
 import com.sam_chordas.android.stockhawk.data.QuoteProvider;
 import com.sam_chordas.android.stockhawk.touch_helper.ItemTouchHelperAdapter;
 import com.sam_chordas.android.stockhawk.touch_helper.ItemTouchHelperViewHolder;
+
+import static com.sam_chordas.android.stockhawk.service.StockIntentService.ACTION_DATA_UPDATED;
 
 /**
  * Created by sam_chordas on 10/6/15.
@@ -88,8 +92,13 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
         String symbol = c.getString(c.getColumnIndex(QuoteColumns.SYMBOL));
         mContext.getContentResolver().delete(QuoteProvider.Quotes.withSymbol(symbol), null, null);
         notifyItemRemoved(position);
+        updateWidgets();
     }
-
+    private void updateWidgets(){
+        Context context = mContext;
+        Intent dataUpdatedIntent = new Intent(ACTION_DATA_UPDATED).setPackage(context.getPackageName());
+        context.sendBroadcast(dataUpdatedIntent);
+    }
     @Override
     public int getItemCount() {
         return super.getItemCount();
@@ -105,18 +114,30 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
             super(itemView);
             symbol = (TextView) itemView.findViewById(R.id.stock_symbol);
             symbol.setTypeface(robotoLight);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                itemView.setBackground(mContext.getDrawable(R.drawable.list_item_selector));
+            }
+          /*  int[] attrs = new int[]{R.attr.selectableItemBackground};
+            TypedArray typedArray = mContext.obtainStyledAttributes(attrs);
+            int backgroundResource = typedArray.getResourceId(0, 0);
+            itemView.setBackgroundResource(backgroundResource);*/
+            itemView.setClickable(true);
             bidPrice = (TextView) itemView.findViewById(R.id.bid_price);
             change = (TextView) itemView.findViewById(R.id.change);
         }
 
         @Override
         public void onItemSelected() {
-            itemView.setBackgroundColor(Color.LTGRAY);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                itemView.setBackgroundColor(mContext.getColor(R.color.white));
+            }
         }
 
         @Override
         public void onItemClear() {
-            itemView.setBackgroundColor(0);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                itemView.setBackgroundColor(mContext.getColor(R.color.white));
+            }
         }
 
         @Override

@@ -26,4 +26,7 @@
   <string name="pref_stiock_status_key">stoc-status</string>
   <string name="empty_stock_list_service_down">No Stock Information available. The server is not returning data</string>
   <string name="empty_stock_list_service_error">No Stock Information available. The server is not returning valid data</string>
+  <string name="one_week">1 week</string>
+  <string name="six_months">6 months</string>
+  <string name="one_year">1 year</string>
 </resources>

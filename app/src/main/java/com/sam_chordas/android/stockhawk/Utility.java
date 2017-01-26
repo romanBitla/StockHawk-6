@@ -26,11 +26,22 @@ public class Utility {
         return queryDayFormat.format(dateInMillis);
     }
 
-    public static String get1WeekBackDate(Date date) {
+    public static String getOneWeekBackDate(Date date) {
         Calendar cal = Calendar.getInstance();
         cal.setTime(date);
-        cal.add(Calendar.DATE, -7);
-//        Date newDate = cal.getTime();
+        cal.add(Calendar.DATE, -9);
+        return getFormattedDate(cal.getTimeInMillis());
+    }
+    public static String getSixMonthBackDate(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, -182);
+        return getFormattedDate(cal.getTimeInMillis());
+    }
+    public static String getOneYearBackDate(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        cal.add(Calendar.DATE, -365);
         return getFormattedDate(cal.getTimeInMillis());
     }
 
