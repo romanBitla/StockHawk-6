@@ -9,6 +9,7 @@ import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.preference.PreferenceManager;
 import android.support.annotation.IntDef;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.ActionBar;
 import android.os.Bundle;
@@ -35,7 +36,6 @@ import com.sam_chordas.android.stockhawk.service.StockTaskService;
 import com.google.android.gms.gcm.GcmNetworkManager;
 import com.google.android.gms.gcm.PeriodicTask;
 import com.google.android.gms.gcm.Task;
-import com.melnykov.fab.FloatingActionButton;
 import com.sam_chordas.android.stockhawk.touch_helper.SimpleItemTouchHelperCallback;
 import com.sam_chordas.android.stockhawk.viewhelper.EmptyRecyclerView;
 
@@ -112,14 +112,14 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
         recyclerView.setAdapter(mCursorAdapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.attachToRecyclerView(recyclerView);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 new MaterialDialog.Builder(mContext).title(R.string.symbol_search)
                         .content(R.string.content_test)
-                        .inputType(InputType.TYPE_CLASS_TEXT)
-                        .input(R.string.input_hint, R.string.input_prefill, new MaterialDialog.InputCallback() {
+                        .inputType(InputType.TYPE_CLASS_TEXT).positiveColor(getResources().getColor(R.color.white))
+                        .inputRange(1,5,getResources().getColor(R.color.material_red_700))
+                        .input(R.string.input_hint, R.string.input_prefill, false, new MaterialDialog.InputCallback() {
                             @Override
                             public void onInput(MaterialDialog dialog, CharSequence input) {
                                 // On FAB click, receive user input. Make sure the stock doesn't already exist
@@ -129,13 +129,12 @@ public class MyStocksActivity extends AppCompatActivity implements LoaderManager
                                         new String[]{input.toString()}, null);
                                 if (c.getCount() != 0) {
                                     Toast toast =
-                                            Toast.makeText(MyStocksActivity.this, "This stock is already saved!",
+                                            Toast.makeText(MyStocksActivity.this, getResources().getString(R.string.toast_stock_not_available),
                                                     Toast.LENGTH_LONG);
                                     toast.setGravity(Gravity.CENTER, Gravity.CENTER, 0);
                                     toast.show();
                                     return;
                                 } else {
-                                    // Add the stock to DB
                                     mServiceIntent.putExtra("tag", "add");
                                     mServiceIntent.putExtra("symbol", input.toString());
                                     startService(mServiceIntent);

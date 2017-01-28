@@ -62,16 +62,20 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
                 viewHolder.change.setBackgroundDrawable(
                         mContext.getResources().getDrawable(R.drawable.percent_change_pill_green));
             } else {
-                viewHolder.change.setBackground(
-                        mContext.getResources().getDrawable(R.drawable.percent_change_pill_green));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    viewHolder.change.setBackground(
+                            mContext.getResources().getDrawable(R.drawable.percent_change_pill_green));
+                }
             }
         } else {
             if (sdk < Build.VERSION_CODES.JELLY_BEAN) {
                 viewHolder.change.setBackgroundDrawable(
                         mContext.getResources().getDrawable(R.drawable.percent_change_pill_red));
             } else {
-                viewHolder.change.setBackground(
-                        mContext.getResources().getDrawable(R.drawable.percent_change_pill_red));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                    viewHolder.change.setBackground(
+                            mContext.getResources().getDrawable(R.drawable.percent_change_pill_red));
+                }
             }
         }
         if (Utils.showPercent) {
@@ -129,14 +133,14 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
         @Override
         public void onItemSelected() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                itemView.setBackgroundColor(mContext.getColor(R.color.white));
+                itemView.setBackgroundColor(mContext.getColor(R.color.cool_dark));
             }
         }
 
         @Override
         public void onItemClear() {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                itemView.setBackgroundColor(mContext.getColor(R.color.white));
+                itemView.setBackgroundColor(mContext.getColor(R.color.cool_dark));
             }
         }
 

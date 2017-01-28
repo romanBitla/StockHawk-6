@@ -1,19 +1,30 @@
 <resources>
-  <string name="app_name">الأسهم هوك</string>
-
-  <string name="action_example">العمل سبيل المثال</string>
-
-  <string name="action_settings">إعدادات</string>
-  <string name="action_change_units">وحدات التغيير</string>
-  <string name="symbol_search">رمز البحث</string>
-  <string name="content_test">بحث عن الأوراق المالية رمز</string>
-  <string name="network_toast">بالإنترنت\n اه اوه! هذا التطبيق يتطلب اتصال</string>
-  <string name="empty_view">اتصال الشبكة مطلوب</string>
-  <string name="invalid_input">لا وجود رمز سهم معين. الرجاء إدخال واحد صحيح.</string>
-  <string name="add_stock_symbol">إضافة أسهم رمز</string>
-  <string name="stock_symbol_name">اسم السهم</string>
-  <string name="percentage_change">نسبة التغيير في سوق الأسهم هو</string>
-  <string name="value_change">التغير في القيمة الاسمية للسهم</string>
-  <string name="stock_symbol">الأسهم رمز</string>
-  <string name="bid_price">سعر</string>
+    <string name="app_name">الأسهم هوك</string>
+    <string name="action_example">العمل سبيل المثال</string>
+    <string name="action_settings">إعدادات</string>
+    <string name="action_change_units">وحدات التغيير</string>
+    <string name="symbol_search">رمز البحث</string>
+    <string name="content_test">بحث عن الأوراق المالية رمز</string>
+    <string name="network_toast">بالإنترنت\n اه اوه! هذا التطبيق يتطلب اتصال</string>
+    <string name="empty_view">اتصال الشبكة مطلوب</string>
+    <string name="invalid_input">لا وجود رمز سهم معين. الرجاء إدخال واحد صحيح.</string>
+    <string name="add_stock_symbol">إضافة أسهم رمز</string>
+    <string name="stock_symbol_name">اسم السهم</string>
+    <string name="percentage_change">نسبة التغيير في سوق الأسهم هو</string>
+    <string name="value_change">التغير في القيمة الاسمية للسهم</string>
+    <string name="stock_symbol">الأسهم رمز</string>
+    <string name="bid_price">سعر</string>
+    <string name="graph_description">الأوراق المالية السعر على مر الزمن</string>
+    <string name="stock_quotes">أسعار الأسهم</string>
+    <string name="empty_stock_list_no_network">لا توجد معلومات المالية المتاحة. الشبكة غير متوفرة لجلب بيانات المخزون</string>
+    <string name="empty_stock_list">لا توجد معلومات المالية المتاحة</string>
+    <string name="empty_stock_list_service_down">لا توجد معلومات المالية المتاحة. الملقم لا يعودون البيانات</string>
+    <string name="empty_stock_list_service_error">لا توجد معلومات المالية المتاحة. الملقم لا تعود بيانات صالحة</string>
+    <string name="one_week">أسبوع 1</string>
+    <string name="six_months">6 اشهر</string>
+    <string name="one_year">1 سنة</string>
+    <string name="data_not_loaded">البيانات لم يتم تحميل</string>
+    <string name="loading_message">تحميل الرسم البياني ...</string>
+    <string name="no_graph_data">الرسم البياني البيانات غير أفايلابل</string>
+    <string name="toast_stock_not_available">يتم حفظ هذه الأسهم بالفعل!</string>
 </resources>

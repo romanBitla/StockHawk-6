@@ -104,16 +104,16 @@ public class StockWidgetIntentService extends RemoteViewsService {
 
                 final int textColor = (isUp)
                         ? R.color.material_green_700
-                        : R.color.accent;
+                        : R.color.material_red_700;
 
-                RemoteViews row = new RemoteViews(mContext.getPackageName(), R.layout.list_item_quote);
+                RemoteViews row = new RemoteViews(mContext.getPackageName(), R.layout.list_item_quote_widget);
 
                 row.setTextViewText(R.id.stock_symbol, symbol);
                 row.setTextViewText(R.id.bid_price, bid);
                 row.setTextViewText(R.id.change, percentChange);
                 row.setTextColor(R.id.change, ContextCompat.getColor(mContext, textColor));
-                row.setTextColor(R.id.stock_symbol, ContextCompat.getColor(mContext, textColor));
-                row.setTextColor(R.id.bid_price, ContextCompat.getColor(mContext, textColor));
+                row.setTextColor(R.id.stock_symbol, ContextCompat.getColor(mContext, R.color.white ));
+                row.setTextColor(R.id.bid_price, ContextCompat.getColor(mContext, R.color.white));
                 Intent intent = new Intent();
                 intent.putExtra(MyStockDetailsActivity.STOCK_SYMBOL, symbol);
                 row.setOnClickFillInIntent(R.id.stock_row, intent);

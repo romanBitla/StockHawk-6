@@ -38,9 +38,6 @@ import retrofit.GsonConverterFactory;
 import retrofit.Response;
 import retrofit.Retrofit;
 
-/**
- * Created by Vidhya on 13-11-2016.
- */
 
 public class MyStockDetailsActivity extends AppCompatActivity implements Callback<HistoricalDataPojo> {
     public static final String STOCK_SYMBOL = "symbol";
@@ -77,6 +74,7 @@ public class MyStockDetailsActivity extends AppCompatActivity implements Callbac
         mChart.setBackgroundColor(getResources().getColor(R.color.white));
         mChart.setDrawGridBackground(false);
         mChart.getAxisLeft().setDrawGridLines(false);
+        mChart.setNoDataText("");
         mChart.getAxisRight().setDrawGridLines(false);
         mChart.getXAxis().setDrawGridLines(false);
         mChart.getAxisLeft().setDrawLabels(false);
@@ -93,19 +91,22 @@ public class MyStockDetailsActivity extends AppCompatActivity implements Callbac
         up.setValueFormatter(new MyYAxisValueFormatter());
         Intent graphIntent = getIntent();
         mExt = graphIntent.getStringExtra("symbol");
+        getSupportActionBar().setTitle(mExt);
         Description chartDescription = new Description();
         chartDescription.setTextSize(16.0f);
         chartDescription.setText(mExt);
         chartDescription.setXOffset(16f);
         mChart.setDescription(chartDescription);
         findViewById(R.id.six_months).performClick();
-
     }
 
     @Override
     public void onResponse(Response<HistoricalDataPojo> response, Retrofit retrofit) {
         response.body();
-        if (response.body() == null) {
+        if (response.body() == null || response.body().getQuery().getResults() == null) {
+            mChart.setNoDataText(getResources().getString(R.string.no_graph_data));
+            mChart.invalidate();
+            mProgressBar.dismiss();
             return;
         }
         List<Entry> entries = new ArrayList<Entry>();
@@ -149,6 +150,7 @@ public class MyStockDetailsActivity extends AppCompatActivity implements Callbac
 
     @Override
     public void onFailure(Throwable t) {
+        mChart.setNoDataText(getResources().getString(R.string.no_graph_data));
         mProgressBar.dismiss();
     }
 
@@ -158,7 +160,7 @@ public class MyStockDetailsActivity extends AppCompatActivity implements Callbac
         ((RadioGroup) view.getParent()).check(view.getId());
         mProgressBar = new ProgressDialog(this);
         mProgressBar.setCancelable(true);
-        mProgressBar.setMessage("Loading Graph ...");
+        mProgressBar.setMessage(getResources().getString(R.string.loading_message));
         mProgressBar.setProgressStyle(ProgressDialog.STYLE_SPINNER);
         mProgressBar.setProgress(0);
         mProgressBar.setMax(100);
